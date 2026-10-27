@@ -99,6 +99,18 @@ SUBURBS = [
             ("Do you cover Elizabeth Hills and Cecil Hills?", "Yes. Both are in our lesson area, along with Abbotsbury, Bonnyrigg and St Johns Park."),
         ],
     },
+    {
+        "slug": "blacktown",
+        "name": "Blacktown",
+        "title": "Driving Lessons Blacktown & Toongabbie | Joseph Driving School",
+        "desc": "Driving lessons in Blacktown and Toongabbie for beginners, test preparation and refreshers. Learners of all ages and levels. Call 0412 489 478.",
+        "intro": "Blacktown mixes quiet suburban streets with fast arterial roads, which makes it a good place to build every skill you need for the test.",
+        "practice": "We start in the side streets and work up to roads like the Great Western Highway, Richmond Road and Flushcombe Road, practising speed management, roundabouts and right turns across traffic.",
+        "nearby": ["Toongabbie", "Seven Hills", "Prospect"],
+        "faq": [
+            ("Do you teach in Toongabbie?", "Yes. Toongabbie is in our lesson area along with Blacktown."),
+        ],
+    },
 ]
 
 # Every suburb the business targets, shown on the homepage and landing page.
@@ -106,7 +118,7 @@ AREAS = [
     "Fairfield", "Canley Vale", "Smithfield", "Wetherill Park", "Bossley Park", "Abbotsbury",
     "Horsley Park", "Cecil Hills", "Elizabeth Hills", "Bonnyrigg", "St Johns Park", "Cabramatta",
     "Mount Pritchard", "Liverpool", "Guildford", "Merrylands", "Granville", "Parramatta",
-    "Oatlands", "Ermington",
+    "Oatlands", "Ermington", "Toongabbie", "Blacktown",
 ]
 
 HEAD_COMMON = """  <meta name="theme-color" content="#ffd400">
