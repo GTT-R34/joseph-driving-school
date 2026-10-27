@@ -47,3 +47,14 @@ change its wording, edit the `SUBURBS` list there and run:
     python3 scripts/build.py
 
 Commit the generated files; Vercel serves them as-is.
+
+## Spam protection
+
+The booking form has no CAPTCHA puzzle. `api/lead.js` instead requires:
+
+- a signed form token from `GET /api/lead`, sent back at least 3 seconds later (blocks bots that post directly)
+- an empty hidden "company" field (honeypot)
+- an Australian phone number, and no links in the text fields
+- at most 5 submissions per IP per 10 minutes, and one enquiry per phone number per 10 minutes
+
+Tokens are signed with `LEAD_SIGNING_SECRET` if set, otherwise with `RESEND_API_KEY`.

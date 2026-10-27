@@ -99,6 +99,31 @@
   var fallback = form.querySelector(".fallback");
   var submitBtn = form.querySelector("button[type=submit]");
 
+  // Spam protection: a signed, time-stamped token from the server must come back
+  // with the enquiry. Bots that post straight to the endpoint don't have one.
+  var formToken = "";
+  var tokenAt = 0;
+  function getToken() {
+    return fetch("/api/lead", { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) {
+        if (j && j.token) { formToken = j.token; tokenAt = Date.now(); }
+        return formToken;
+      })
+      .catch(function () { return formToken; });
+  }
+  getToken();
+
+  function readyToken() {
+    // Refresh tokens older than 90 minutes, and keep at least 3.5s between
+    // issuing the token and sending the form (the server rejects faster posts).
+    var p = (!formToken || Date.now() - tokenAt > 90 * 60e3) ? getToken() : Promise.resolve(formToken);
+    return p.then(function (t) {
+      var wait = tokenAt ? 3500 - (Date.now() - tokenAt) : 0;
+      return wait > 0 ? new Promise(function (r) { setTimeout(function () { r(t); }, wait); }) : t;
+    });
+  }
+
   function value(name) {
     var el = form.elements[name];
     if (!el) return "";
@@ -150,20 +175,26 @@
     };
 
     if (!data.name) { showError("Please add your name."); form.elements.name.focus(); return; }
-    var digits = data.phone.replace(/[^0-9]/g, "");
-    if (digits.length < 8) { showError("Please add a phone number we can call you on."); form.elements.phone.focus(); return; }
-
     var e164 = toE164(data.phone);
-    if (e164) ssSet("jds_lead_phone", e164);
+    if (!/^\+61[23478]\d{8}$/.test(e164)) {
+      showError("Please enter an Australian phone number, e.g. 0412 345 678.");
+      form.elements.phone.focus();
+      return;
+    }
+    ssSet("jds_lead_phone", e164);
 
     submitBtn.disabled = true;
     submitBtn.textContent = "Sending…";
 
-    fetch("/api/lead", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    })
+    readyToken()
+      .then(function (token) {
+        data.token = token;
+        return fetch("/api/lead", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+      })
       .then(function (res) { return res.ok ? goThanks() : Promise.reject(res.status); })
       .catch(function () {
         // Online delivery isn't available: let the visitor send the same details by text.
