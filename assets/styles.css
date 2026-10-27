@@ -1,3 +1,9 @@
+@font-face { font-family: "Archivo"; font-style: normal; font-weight: 700; font-display: optional; src: url(/assets/fonts/archivo-latin-700-normal.woff2) format("woff2"); }
+@font-face { font-family: "Archivo"; font-style: normal; font-weight: 800 900; font-display: optional; src: url(/assets/fonts/archivo-latin-800-normal.woff2) format("woff2"); }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 400 500; font-display: optional; src: url(/assets/fonts/manrope-latin-400-normal.woff2) format("woff2"); }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 600 700; font-display: optional; src: url(/assets/fonts/manrope-latin-700-normal.woff2) format("woff2"); }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 800 900; font-display: optional; src: url(/assets/fonts/manrope-latin-800-normal.woff2) format("woff2"); }
+
 :root {
   --ink: #141414;
   --ink-soft: #3b3b3b;
@@ -85,6 +91,10 @@ p { margin: 0 0 1em; }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 68px; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--font-head); font-weight: 800; font-size: 1.15rem; letter-spacing: -0.01em; }
 .brand small { display: block; font-family: var(--font-body); font-weight: 600; font-size: 0.72rem; color: var(--muted); letter-spacing: 0.02em; }
+@media (max-width: 480px) {
+  .site-header .brand { font-size: 1rem; line-height: 1.15; }
+  .site-header .brand small { display: none; }
+}
 .nav { display: flex; align-items: center; gap: 22px; }
 .nav a { text-decoration: none; font-weight: 600; font-size: 0.95rem; color: var(--ink-soft); }
 .nav a:hover { color: var(--ink); }
@@ -294,6 +304,31 @@ section.alt { background: var(--paper-2); }
 @media (max-width: 900px) { .lp .hero-grid { grid-template-columns: 1fr; } }
 .lp .lede { max-width: 42ch; }
 .lp section { padding: 64px 0; }
+
+/* Breadcrumbs */
+.crumbs { padding-top: 18px; font-size: 0.88rem; color: var(--muted); }
+.crumbs a { color: var(--ink-soft); }
+.crumbs + .hero { padding-top: 24px; }
+
+/* Long-form copy */
+.prose { max-width: 760px; }
+.prose p { color: var(--ink-soft); font-size: 1.06rem; }
+.prose h3 { margin-top: 1.6em; }
+.tick-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.tick-list li { display: flex; gap: 10px; align-items: baseline; font-weight: 600; }
+.tick-list li::before { content: "✓"; display: inline-grid; place-items: center; width: 22px; height: 22px; flex: none; border-radius: 50%; background: var(--ink); color: var(--plate); font-size: 0.72rem; font-weight: 900; }
+
+/* Linked area chips */
+.areas a { text-decoration: none; }
+.areas.linked li, .areas li:has(a) { background: var(--ink); border-color: var(--ink); }
+.areas.linked a, .areas li a { color: var(--white); }
+.areas li:has(a):hover { background: #000; }
+.areas-note + .areas.linked { margin-top: 10px; }
+
+/* Footer area links */
+.footer-areas { width: 100%; display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; padding-top: 18px; border-top: 1px solid #353a41; }
+.footer-areas span { color: #9aa0a8; }
+.footer-areas ul { display: flex; flex-wrap: wrap; gap: 8px 16px; list-style: none; padding: 0; margin: 0; }
 
 .hidden { display: none !important; }
 

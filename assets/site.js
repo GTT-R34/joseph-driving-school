@@ -55,7 +55,8 @@
     if (kind === "call") el.setAttribute("href", "tel:" + phone);
     if (kind === "sms") el.setAttribute("href", smsHref(defaultText));
     if (kind === "whatsapp") {
-      if (!cfg.whatsappEnabled) { el.classList.add("hidden"); return; }
+      if (!cfg.whatsappEnabled) return;
+      el.classList.remove("hidden");
       el.setAttribute("href", waHref(defaultText));
       el.setAttribute("target", "_blank");
       el.setAttribute("rel", "noopener");

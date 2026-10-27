@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.josephdrivingschool.com.au/</loc></url>
-  <url><loc>https://www.josephdrivingschool.com.au/privacy</loc></url>
+  <url><loc>https://www.josephdrivingschool.com.au/</loc><lastmod>2026-10-27</lastmod><priority>1.0</priority></url>
+  <url><loc>https://www.josephdrivingschool.com.au/driving-lessons/fairfield</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.josephdrivingschool.com.au/driving-lessons/liverpool</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.josephdrivingschool.com.au/driving-lessons/blacktown</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.josephdrivingschool.com.au/driving-lessons/parramatta</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.josephdrivingschool.com.au/driving-lessons/cabramatta</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.josephdrivingschool.com.au/driving-lessons/wetherill-park</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.josephdrivingschool.com.au/privacy</loc><lastmod>2026-10-27</lastmod><priority>0.2</priority></url>
 </urlset>

@@ -10,6 +10,7 @@ Static site for Joseph Driving School, deployed on Vercel from the `main` branch
 | `/book`    | Google Ads landing page (noindex), single goal: get a lead |
 | `/thanks`  | Shown after the form is sent; fires the form conversion   |
 | `/privacy` | Privacy policy (required for Google Ads lead forms)       |
+| `/driving-lessons/<suburb>` | Local SEO pages for key suburbs             |
 
 ## Settings
 
@@ -37,3 +38,12 @@ Environment Variables:
 - `LEAD_FROM_EMAIL` (optional)
 
 Until they're set, the form offers to send the visitor's details by text message instead.
+
+## Suburb pages and sitemap
+
+The suburb pages and `sitemap.xml` are generated from `scripts/build.py`. To add a suburb or
+change its wording, edit the `SUBURBS` list there and run:
+
+    python3 scripts/build.py
+
+Commit the generated files; Vercel serves them as-is.
