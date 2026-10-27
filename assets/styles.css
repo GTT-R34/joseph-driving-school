@@ -91,9 +91,21 @@ p { margin: 0 0 1em; }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 68px; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--font-head); font-weight: 800; font-size: 1.15rem; letter-spacing: -0.01em; }
 .brand small { display: block; font-family: var(--font-body); font-weight: 600; font-size: 0.72rem; color: var(--muted); letter-spacing: 0.02em; }
-@media (max-width: 480px) {
-  .site-header .brand { font-size: 1rem; line-height: 1.15; }
+@media (max-width: 600px) {
+  .site-header .wrap { height: 60px; gap: 10px; }
+  .site-header .brand { font-size: 1rem; line-height: 1.15; white-space: nowrap; min-width: 0; }
+  .site-header .brand > span:last-child { overflow: hidden; text-overflow: ellipsis; }
   .site-header .brand small { display: none; }
+  .site-header .plate { width: 34px; height: 34px; font-size: 1.1rem; }
+  /* The sticky bottom bar already shows the number, so the header button just says "Call". */
+  .site-header .btn [data-phone-text] { display: none; }
+  .site-header .btn-sm { min-height: 40px; padding: 0 16px; }
+  .eyebrow { font-size: 0.74rem; letter-spacing: 0.06em; margin-bottom: 14px; }
+  .hero { padding-top: 28px; }
+  section { padding: 64px 0; }
+}
+@media (max-width: 340px) {
+  .site-header .brand > span:last-child { display: none; }
 }
 .nav { display: flex; align-items: center; gap: 22px; }
 .nav a { text-decoration: none; font-weight: 600; font-size: 0.95rem; color: var(--ink-soft); }

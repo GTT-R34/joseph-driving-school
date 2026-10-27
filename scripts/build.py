@@ -95,7 +95,7 @@ HEAD_COMMON = """  <meta name="theme-color" content="#ffd400">
   <link rel="preload" href="/assets/fonts/archivo-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/manrope-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/styles.css">"""
+  <link rel="stylesheet" href="/assets/styles.css?v=e2d1b295">"""
 
 PHONE_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>'
 
@@ -345,8 +345,8 @@ def suburb_page(s):
     <a class="btn btn-ink" href="#booking-form">Call back</a>
   </div>
 
-  <script src="/assets/config.js"></script>
-  <script src="/assets/site.js" defer></script>
+  <script src="/assets/config.js?v=e2d1b295"></script>
+  <script src="/assets/site.js?v=e2d1b295" defer></script>
 </body>
 </html>
 """.format(
@@ -381,6 +381,27 @@ def sitemap():
     return '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n%s\n</urlset>\n' % body
 
 
+def stamp_assets(root):
+    """Adds ?v=<hash> to CSS/JS links on every page so phones pick up changes at once."""
+    import glob, hashlib, re
+    h = hashlib.sha1()
+    for f in ("assets/styles.css", "assets/site.js", "assets/config.js"):
+        with open(os.path.join(root, f), "rb") as fh:
+            h.update(fh.read())
+    v = h.hexdigest()[:8]
+    pages = glob.glob(os.path.join(root, "**", "*.html"), recursive=True)
+    for p in pages:
+        if os.sep + "node_modules" + os.sep in p:
+            continue
+        with open(p, encoding="utf-8") as fh:
+            s = fh.read()
+        s2 = re.sub(r'/assets/(styles\.css|site\.js|config\.js)(\?v=[0-9a-f]+)?"', lambda m: '/assets/%s?v=%s"' % (m.group(1), v), s)
+        if s2 != s:
+            with open(p, "w", encoding="utf-8") as fh:
+                fh.write(s2)
+    return v
+
+
 def main():
     root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     for s in SUBURBS:
@@ -390,7 +411,8 @@ def main():
             f.write(suburb_page(s))
     with open(os.path.join(root, "sitemap.xml"), "w", encoding="utf-8") as f:
         f.write(sitemap())
-    print("Built %d suburb pages and sitemap.xml" % len(SUBURBS))
+    v = stamp_assets(root)
+    print("Built %d suburb pages and sitemap.xml (assets v=%s)" % (len(SUBURBS), v))
 
 
 if __name__ == "__main__":
