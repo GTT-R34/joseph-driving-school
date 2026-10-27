@@ -86,9 +86,14 @@ module.exports = async function handler(req, res) {
         html
       })
     });
-    if (!r.ok) return res.status(502).json({ ok: false });
+    if (!r.ok) {
+      const detail = await r.text().catch(() => "");
+      console.error("Resend rejected enquiry email:", r.status, detail.slice(0, 500));
+      return res.status(502).json({ ok: false });
+    }
     return res.status(200).json({ ok: true });
   } catch (e) {
+    console.error("Enquiry email request failed:", e && e.message);
     return res.status(502).json({ ok: false });
   }
 };
