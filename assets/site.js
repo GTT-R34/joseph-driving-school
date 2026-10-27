@@ -75,7 +75,20 @@
   /* ---------- Thank-you page conversion ---------- */
   if (document.body.hasAttribute("data-thanks") && ssGet("jds_lead") === "1") {
     ssDel("jds_lead");
+    // Enhanced conversions: the Google tag hashes this before it leaves the browser.
+    var leadPhone = ssGet("jds_lead_phone");
+    ssDel("jds_lead_phone");
+    if (ads.id && leadPhone) window.gtag("set", "user_data", { phone_number: leadPhone });
     track("form");
+  }
+
+  function toE164(raw) {
+    var d = String(raw || "").replace(/[^0-9+]/g, "");
+    if (d.indexOf("+") === 0) return d;
+    d = d.replace(/[^0-9]/g, "");
+    if (d.indexOf("61") === 0 && d.length >= 11) return "+" + d;
+    if (d.indexOf("0") === 0 && d.length === 10) return "+61" + d.slice(1);
+    return "";
   }
 
   /* ---------- Booking form ---------- */
@@ -139,6 +152,9 @@
     if (!data.name) { showError("Please add your name."); form.elements.name.focus(); return; }
     var digits = data.phone.replace(/[^0-9]/g, "");
     if (digits.length < 8) { showError("Please add a phone number we can call you on."); form.elements.phone.focus(); return; }
+
+    var e164 = toE164(data.phone);
+    if (e164) ssSet("jds_lead_phone", e164);
 
     submitBtn.disabled = true;
     submitBtn.textContent = "Sending…";
