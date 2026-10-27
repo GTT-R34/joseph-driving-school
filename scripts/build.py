@@ -18,58 +18,59 @@ SUBURBS = [
         "slug": "fairfield",
         "name": "Fairfield",
         "title": "Driving Lessons Fairfield | Joseph Driving School",
-        "desc": "Driving lessons in Fairfield and Fairfield West for learners of all ages. Beginner lessons, test preparation and refreshers. Call 0412 489 478.",
+        "desc": "Driving lessons in Fairfield and Canley Vale for learners of all ages. Beginner lessons, test preparation and refreshers. Call 0412 489 478.",
         "intro": "Fairfield is home. Joseph Driving School is based in Fairfield West, so lessons around Fairfield are on streets we know well.",
         "practice": "Lessons start on quieter residential streets, then move to the roads you'll actually drive on: The Horsley Drive, Hamilton Road and the Cumberland Highway. We also practise around the busy Ware Street shopping area, where pedestrians, parking cars and buses all need watching at once.",
-        "nearby": ["Fairfield West", "Fairfield Heights", "Fairfield East", "Canley Vale", "Old Guildford", "Smithfield"],
+        "nearby": ["Canley Vale", "Smithfield", "Guildford", "Cabramatta", "Wetherill Park"],
         "faq": [
-            ("Do you teach in Fairfield West?", "Yes. We're based in Fairfield West, so it's right in our main area."),
+            ("Do you teach in Canley Vale?", "Yes. Canley Vale is right next to Fairfield and close to our base in Fairfield West."),
         ],
     },
     {
         "slug": "liverpool",
         "name": "Liverpool",
         "title": "Driving Lessons Liverpool | Joseph Driving School",
-        "desc": "Driving lessons in Liverpool and nearby suburbs. Beginner lessons, driving test preparation and refreshers with a licensed instructor. Call 0412 489 478.",
+        "desc": "Driving lessons in Liverpool, Mount Pritchard and nearby. Beginner lessons, driving test preparation and refreshers. Call 0412 489 478.",
         "intro": "Learning to drive in Liverpool means getting comfortable with some of Western Sydney's busiest roads. We build up to them step by step.",
         "practice": "Once the basics are solid, lessons move onto multi-lane roads like the Hume Highway, Elizabeth Drive and Hoxton Park Road, so lane changes, merging and big intersections become second nature before your test.",
-        "nearby": ["Warwick Farm", "Casula", "Lurnea", "Cartwright", "Busby", "Miller", "Green Valley", "Hinchinbrook"],
+        "nearby": ["Mount Pritchard", "Cecil Hills", "Elizabeth Hills", "Bonnyrigg", "Cabramatta"],
         "faq": [
             ("Can you help with busy multi-lane roads?", "Yes. We practise lane changes, merging and large intersections on Liverpool's main roads once you're ready."),
-        ],
-    },
-    {
-        "slug": "blacktown",
-        "name": "Blacktown",
-        "title": "Driving Lessons Blacktown | Joseph Driving School",
-        "desc": "Driving lessons in Blacktown for beginners, test preparation and refreshers. Learners of all ages and levels. Call Joseph Driving School on 0412 489 478.",
-        "intro": "Blacktown mixes quiet suburban streets with fast arterial roads, which makes it a good place to build every skill you need for the test.",
-        "practice": "We start in the side streets and work up to roads like the Great Western Highway, Richmond Road and Flushcombe Road, practising speed management, roundabouts and right turns across traffic.",
-        "nearby": ["Seven Hills", "Prospect", "Doonside", "Lalor Park", "Kings Park", "Marayong", "Quakers Hill"],
-        "faq": [
-            ("Do you cover suburbs around Blacktown?", "Yes, including Seven Hills, Doonside and Quakers Hill. Call to check your street."),
         ],
     },
     {
         "slug": "parramatta",
         "name": "Parramatta",
         "title": "Driving Lessons Parramatta | Joseph Driving School",
-        "desc": "Driving lessons in Parramatta and nearby suburbs. Build confidence in city traffic with a licensed instructor. Call Joseph Driving School on 0412 489 478.",
+        "desc": "Driving lessons in Parramatta, Granville, Oatlands and Ermington. Build confidence in city traffic. Call Joseph Driving School on 0412 489 478.",
         "intro": "Parramatta is Sydney's second CBD, and driving here takes real confidence. Lessons help you get there calmly, at your own pace.",
         "practice": "Lessons cover city-style driving around Church Street, James Ruse Drive and the Great Western Highway: heavy traffic, frequent signals, pedestrians, and sharing the road with the light rail.",
-        "nearby": ["Westmead", "North Parramatta", "Harris Park", "Rosehill", "Granville", "Merrylands"],
+        "nearby": ["Granville", "Oatlands", "Ermington", "Merrylands", "Guildford"],
         "faq": [
+            ("Do you teach in Oatlands and Ermington?", "Yes. We cover Oatlands and Ermington as well as Parramatta and Granville."),
             ("I'm nervous about city traffic. Can you help?", "Yes. We start away from the busiest streets and only move into heavier traffic when you're ready."),
+        ],
+    },
+    {
+        "slug": "merrylands",
+        "name": "Merrylands",
+        "title": "Driving Lessons Merrylands & Guildford | Joseph Driving School",
+        "desc": "Driving lessons in Merrylands, Guildford and Granville for learners of all ages. Beginner lessons, test preparation and refreshers. Call 0412 489 478.",
+        "intro": "Merrylands, Guildford and Granville sit between Fairfield and Parramatta, so they're a regular part of our lesson area.",
+        "practice": "Lessons use Merrylands Road, Woodville Road and Guildford Road, with practice at busy shopping-centre car parks, roundabouts and right turns across steady traffic.",
+        "nearby": ["Guildford", "Granville", "Parramatta", "Fairfield"],
+        "faq": [
+            ("Do you cover Guildford and Granville?", "Yes. Guildford and Granville are both in our lesson area."),
         ],
     },
     {
         "slug": "cabramatta",
         "name": "Cabramatta",
         "title": "Driving Lessons Cabramatta | Joseph Driving School",
-        "desc": "Driving lessons in Cabramatta, Canley Heights and nearby. Beginner lessons, test preparation and refreshers. Call Joseph Driving School on 0412 489 478.",
+        "desc": "Driving lessons in Cabramatta, Canley Vale and Bonnyrigg. Beginner lessons, test preparation and refreshers. Call Joseph Driving School on 0412 489 478.",
         "intro": "Cabramatta is just down the road from our base in Fairfield West, so it's one of the areas we teach in most.",
         "practice": "Lessons cover the busy streets around John Street, plus Cabramatta Road and the Hume Highway, with plenty of practice at parking, pedestrian crossings and roundabouts.",
-        "nearby": ["Cabramatta West", "Canley Heights", "Canley Vale", "Lansvale", "Mount Pritchard", "Bonnyrigg"],
+        "nearby": ["Canley Vale", "Mount Pritchard", "Bonnyrigg", "St Johns Park", "Fairfield"],
         "faq": [
             ("Is Cabramatta close to where you're based?", "Yes. We're based in nearby Fairfield West."),
         ],
@@ -78,14 +79,34 @@ SUBURBS = [
         "slug": "wetherill-park",
         "name": "Wetherill Park",
         "title": "Driving Lessons Wetherill Park & Smithfield | Joseph Driving School",
-        "desc": "Driving lessons in Wetherill Park, Smithfield, Bossley Park and Prairiewood. Learners of all ages and levels. Call Joseph Driving School on 0412 489 478.",
+        "desc": "Driving lessons in Wetherill Park, Smithfield and Horsley Park. Learners of all ages and levels. Call Joseph Driving School on 0412 489 478.",
         "intro": "Wetherill Park and Smithfield sit right next to our base in Fairfield West, making them some of the easiest areas for us to teach in.",
         "practice": "Lessons use The Horsley Drive, Cowpasture Road and the streets around the industrial area, where you learn to share the road safely with trucks and other heavy vehicles.",
-        "nearby": ["Smithfield", "Prairiewood", "Bossley Park", "Greenfield Park", "Edensor Park", "Horsley Park"],
+        "nearby": ["Smithfield", "Horsley Park", "Bossley Park", "Abbotsbury"],
         "faq": [
-            ("Do you teach around Smithfield too?", "Yes. Smithfield, Bossley Park and Prairiewood are all close to our base."),
+            ("Do you teach around Smithfield and Horsley Park too?", "Yes. Smithfield and Horsley Park are both close to our base."),
         ],
     },
+    {
+        "slug": "bossley-park",
+        "name": "Bossley Park",
+        "title": "Driving Lessons Bossley Park & Cecil Hills | Joseph Driving School",
+        "desc": "Driving lessons in Bossley Park, Abbotsbury, Cecil Hills, Elizabeth Hills, Bonnyrigg and St Johns Park. Call Joseph Driving School on 0412 489 478.",
+        "intro": "Bossley Park, Abbotsbury and Cecil Hills are a short drive from our base in Fairfield West, with plenty of quiet streets for first lessons.",
+        "practice": "New learners start on the quieter residential streets, then progress to busier roads like Cowpasture Road and Elizabeth Drive for higher speeds, lane changes and larger intersections.",
+        "nearby": ["Abbotsbury", "Cecil Hills", "Elizabeth Hills", "Bonnyrigg", "St Johns Park", "Horsley Park"],
+        "faq": [
+            ("Do you cover Elizabeth Hills and Cecil Hills?", "Yes. Both are in our lesson area, along with Abbotsbury, Bonnyrigg and St Johns Park."),
+        ],
+    },
+]
+
+# Every suburb the business targets, shown on the homepage and landing page.
+AREAS = [
+    "Fairfield", "Canley Vale", "Smithfield", "Wetherill Park", "Bossley Park", "Abbotsbury",
+    "Horsley Park", "Cecil Hills", "Elizabeth Hills", "Bonnyrigg", "St Johns Park", "Cabramatta",
+    "Mount Pritchard", "Liverpool", "Guildford", "Merrylands", "Granville", "Parramatta",
+    "Oatlands", "Ermington",
 ]
 
 HEAD_COMMON = """  <meta name="theme-color" content="#ffd400">
@@ -381,6 +402,46 @@ def sitemap():
     return '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n%s\n</urlset>\n' % body
 
 
+def inject_areas(root):
+    """Writes AREAS into the homepage and landing page chips and the homepage schema."""
+    import json as _json, re as _re
+    slugs = {x["name"]: x["slug"] for x in SUBURBS}
+
+    def chips(link):
+        out = []
+        for a in AREAS:
+            if link and a in slugs:
+                out.append('<li><a href="/driving-lessons/%s">%s</a></li>' % (slugs[a], html.escape(a)))
+            else:
+                out.append("<li>%s</li>" % html.escape(a))
+        return "".join(out)
+
+    for rel, link in (("index.html", True), ("book/index.html", False)):
+        p = os.path.join(root, rel)
+        with open(p, encoding="utf-8") as fh:
+            s = fh.read()
+        s = _re.sub(r'(<ul class="areas">\s*).*?(\s*</ul>)', lambda m: m.group(1) + chips(link) + m.group(2), s, count=1, flags=_re.S)
+        if rel == "index.html":
+            def fix_schema(m):
+                data = _json.loads(m.group(1))
+                for item in data:
+                    if item.get("@type") == "DrivingSchool":
+                        item["areaServed"] = [{"@type": "Place", "name": a + ", NSW"} for a in AREAS]
+                return '<script type="application/ld+json">%s</script>' % _json.dumps(data, ensure_ascii=False)
+            s = _re.sub(r'<script type="application/ld\+json">(.*?)</script>', fix_schema, s, count=1, flags=_re.S)
+        with open(p, "w", encoding="utf-8") as fh:
+            fh.write(s)
+
+    # Keep the shared footer (with its suburb links) current on hand-written pages.
+    for rel in ("index.html", "privacy/index.html"):
+        p = os.path.join(root, rel)
+        with open(p, encoding="utf-8") as fh:
+            s = fh.read()
+        s = _re.sub(r'  <footer class="site-footer">.*?</footer>', lambda m: footer(), s, count=1, flags=_re.S)
+        with open(p, "w", encoding="utf-8") as fh:
+            fh.write(s)
+
+
 def stamp_assets(root):
     """Adds ?v=<hash> to CSS/JS links on every page so phones pick up changes at once."""
     import glob, hashlib, re
@@ -411,6 +472,7 @@ def main():
             f.write(suburb_page(s))
     with open(os.path.join(root, "sitemap.xml"), "w", encoding="utf-8") as f:
         f.write(sitemap())
+    inject_areas(root)
     v = stamp_assets(root)
     print("Built %d suburb pages and sitemap.xml (assets v=%s)" % (len(SUBURBS), v))
 
