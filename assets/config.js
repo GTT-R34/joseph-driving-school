@@ -16,12 +16,12 @@ window.JDS = {
   // id looks like "AW-123456789"; each label is the part after the slash
   // in the conversion's "send_to" value.
   googleAds: {
-    id: "",
+    id: "AW-803740671",
     labels: {
-      call: "",      // tap on any call button
-      sms: "",       // tap on any text-message button
-      whatsapp: "",  // tap on any WhatsApp button
-      form: ""       // booking form submitted (fires on /thanks)
+      call: "y8FOCIKsr6sdEP-3oP8C",   // "Website - click to call"
+      sms: "j4QZCIWsr6sdEP-3oP8C",    // "Website - click to text"
+      whatsapp: "",                   // not set up (WhatsApp is off)
+      form: "KZOqCP-rr6sdEP-3oP8C"    // "Website - booking form lead" (fires on /thanks)
     }
   }
 };
