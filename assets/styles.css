@@ -354,10 +354,11 @@ section.alt { background: var(--paper-2); }
 .contact-addr { font-weight: 800; font-size: 1.1rem; }
 
 /* Homepage area chips: all clickable, one consistent style */
-#areas .areas li, #areas .areas li:has(a),
-.areas.nearby li, .areas.nearby li:has(a) { background: var(--white); border-color: var(--line); padding: 0; }
-#areas .areas li a, .areas.nearby li a { display: block; padding: 8px 16px; color: var(--ink); text-decoration: none; }
-#areas .areas li:has(a):hover, .areas.nearby li:has(a):hover { background: var(--plate); border-color: var(--ink); }
+/* Every clickable suburb chip: black with white text, yellow on hover */
+.areas li:has(a) { background: var(--ink); border-color: var(--ink); padding: 0; }
+.areas li a { display: block; padding: 8px 16px; color: var(--white); text-decoration: none; }
+.areas li:has(a):hover { background: var(--plate); border-color: var(--ink); }
+.areas li:has(a):hover a { color: var(--ink); }
 
 /* Four lesson cards: 2 x 2 on desktop */
 @media (min-width: 901px) { .cards.cards-2x2 { grid-template-columns: repeat(2, 1fr); } }
