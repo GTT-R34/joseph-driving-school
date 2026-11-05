@@ -223,7 +223,7 @@ def suburb_page(s):
     name = html.escape(s["name"])
     faq_all = s["faq"] + [
         ("Do lessons count towards my logbook?", "Yes. In NSW, each one-hour lesson with a licensed driving instructor is recorded as three logbook hours, for up to ten lessons (30 hours)."),
-        ("How much do lessons cost?", "Call or message us for current prices and package deals."),
+        ("How much do lessons cost?", "Call or message us for current prices."),
     ]
     schema = [
         {
@@ -330,7 +330,6 @@ def suburb_page(s):
         <ul class="tick-list">
           <li>First lessons for new learners</li>
           <li>Driving test preparation</li>
-          <li>Driving test package (ask when you book)</li>
           <li>Refresher lessons</li>
           <li>Lessons for overseas licence holders</li>
         </ul>

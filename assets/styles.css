@@ -357,3 +357,6 @@ section.alt { background: var(--paper-2); }
 #areas .areas li, #areas .areas li:has(a) { background: var(--white); border-color: var(--line); padding: 0; }
 #areas .areas li a { display: block; padding: 8px 16px; color: var(--ink); text-decoration: none; }
 #areas .areas li:has(a):hover { background: var(--plate); border-color: var(--ink); }
+
+/* Four lesson cards: 2 x 2 on desktop */
+@media (min-width: 901px) { .cards.cards-2x2 { grid-template-columns: repeat(2, 1fr); } }
