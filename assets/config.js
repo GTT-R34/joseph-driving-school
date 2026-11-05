@@ -8,7 +8,7 @@ window.JDS = {
   phoneE164: "+61412489478",
 
   // Set to true once WhatsApp is confirmed on the number above.
-  whatsappEnabled: false,
+  whatsappEnabled: true,
 
   facebookUrl: "https://www.facebook.com/josephdrivingschool/",
 
