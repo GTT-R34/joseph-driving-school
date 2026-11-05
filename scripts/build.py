@@ -255,7 +255,14 @@ def suburb_page(s):
         "          <details>\n            <summary>%s</summary>\n            <p>%s</p>\n          </details>" % (html.escape(q), html.escape(a))
         for q, a in faq_all
     )
-    nearby = "".join("<li>%s</li>" % html.escape(n) for n in s["nearby"])
+    # Nearby suburbs: open their own page if they have one; otherwise jump to this
+    # page's booking form with the suburb filled in.
+    own = {x["name"]: x["slug"] for x in SUBURBS}
+    def nearby_chip(n):
+        if n in own:
+            return '<li><a href="/driving-lessons/%s">%s</a></li>' % (own[n], html.escape(n))
+        return '<li><a href="#booking-form" data-suburb="%s">%s</a></li>' % (html.escape(n), html.escape(n))
+    nearby = "".join(nearby_chip(n) for n in s["nearby"])
 
     return """<!doctype html>
 <html lang="en-AU">
@@ -342,7 +349,7 @@ def suburb_page(s):
           <span class="kicker">Nearby</span>
           <h2>Also covering suburbs near {name}</h2>
         </div>
-        <ul class="areas">{nearby}</ul>
+        <ul class="areas nearby">{nearby}</ul>
         <p class="areas-note">See also: </p>
         <ul class="areas linked">{others}</ul>
       </div>

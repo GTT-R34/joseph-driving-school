@@ -95,6 +95,14 @@
   var form = document.getElementById("booking-form");
   if (!form) return;
 
+  // Nearby-suburb chips: fill in the suburb, then scroll to the form.
+  document.querySelectorAll("a[data-suburb]").forEach(function (a) {
+    a.addEventListener("click", function () {
+      var field = form.elements.suburb;
+      if (field) field.value = a.getAttribute("data-suburb");
+    });
+  });
+
   var msg = form.querySelector(".form-msg");
   var fallback = form.querySelector(".fallback");
   var submitBtn = form.querySelector("button[type=submit]");
