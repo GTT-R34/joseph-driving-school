@@ -418,7 +418,14 @@ def sitemap():
 def inject_areas(root):
     """Writes AREAS into the homepage and landing page chips and the homepage schema."""
     import json as _json, re as _re
+    # Every suburb links somewhere: its own page, or the page that covers it as "nearby".
     slugs = {x["name"]: x["slug"] for x in SUBURBS}
+    for x in SUBURBS:
+        for n in x["nearby"]:
+            slugs.setdefault(n, x["slug"])
+    missing = [a for a in AREAS if a not in slugs]
+    if missing:
+        raise SystemExit("No suburb page covers: " + ", ".join(missing))
 
     def chips(link):
         out = []

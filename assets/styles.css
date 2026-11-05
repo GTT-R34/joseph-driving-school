@@ -352,3 +352,8 @@ section.alt { background: var(--paper-2); }
 /* Business address */
 .footer-address { font-style: normal; color: #c9ccd1; align-self: center; }
 .contact-addr { font-weight: 800; font-size: 1.1rem; }
+
+/* Homepage area chips: all clickable, one consistent style */
+#areas .areas li, #areas .areas li:has(a) { background: var(--white); border-color: var(--line); padding: 0; }
+#areas .areas li a { display: block; padding: 8px 16px; color: var(--ink); text-decoration: none; }
+#areas .areas li:has(a):hover { background: var(--plate); border-color: var(--ink); }
