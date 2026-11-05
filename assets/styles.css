@@ -348,3 +348,7 @@ section.alt { background: var(--paper-2); }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* Business address */
+.footer-address { font-style: normal; color: #c9ccd1; align-self: center; }
+.contact-addr { font-weight: 800; font-size: 1.1rem; }

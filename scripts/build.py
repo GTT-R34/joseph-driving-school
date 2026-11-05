@@ -203,6 +203,7 @@ def footer():
     return """  <footer class="site-footer">
     <div class="wrap">
       <a class="brand" href="/"><span class="plate" aria-hidden="true">L</span><span>Joseph Driving School<small>Fairfield West, NSW</small></span></a>
+      <address class="footer-address">96 Lombard Street, Fairfield West NSW 2165</address>
       <ul class="footer-links">
         <li><a href="tel:+61412489478" data-action="call" data-phone-text>0412 489 478</a></li>
         <li><a href="https://www.facebook.com/josephdrivingschool/" rel="noopener" target="_blank">Facebook</a></li>
