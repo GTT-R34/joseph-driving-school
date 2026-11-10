@@ -166,7 +166,6 @@ FORM = """        <form id="booking-form" class="form-card" novalidate>
               <select id="f-trans" name="transmission">
                 <option value="">Not sure</option>
                 <option>Automatic</option>
-                <option>Manual</option>
               </select>
             </div>
             <div class="field">
