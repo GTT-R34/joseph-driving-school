@@ -197,6 +197,7 @@ def footer():
       <ul class="footer-links">
         <li><a href="tel:+61412489478" data-action="call" data-phone-text>0412 489 478</a></li>
         <li><a href="https://www.facebook.com/josephdrivingschool/" rel="noopener" target="_blank">Facebook</a></li>
+        <li><a href="/review" rel="noopener" target="_blank">Leave a review</a></li>
         <li><a href="/privacy">Privacy</a></li>
       </ul>
       <nav class="footer-areas" aria-label="Areas we cover">
