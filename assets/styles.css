@@ -363,4 +363,3 @@ section.alt { background: var(--paper-2); }
 /* Four lesson cards: 2 x 2 on desktop */
 @media (min-width: 901px) { .cards.cards-2x2 { grid-template-columns: repeat(2, 1fr); } }
 
-.stars { letter-spacing: 1px; font-size: 1.05em; line-height: 1; }
