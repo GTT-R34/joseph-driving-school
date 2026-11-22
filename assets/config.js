@@ -12,6 +12,13 @@ window.JDS = {
 
   facebookUrl: "https://www.facebook.com/josephdrivingschool/",
 
+  // PostHog website analytics (EU cloud). The key is a public project key.
+  // Leave key empty to turn PostHog off.
+  posthog: {
+    key: "phc_pqoaJk6erKVAZA3evBf2Do7FNPmjdJSeFm8psgVB5fVC",
+    host: "https://eu.i.posthog.com"
+  },
+
   // Google Ads conversion tracking. Leave id empty to disable tracking.
   // id looks like "AW-123456789"; each label is the part after the slash
   // in the conversion's "send_to" value.
