@@ -147,6 +147,9 @@ module.exports = async function handler(req, res) {
     message: clean(body.message),
     page: clean(body.page).slice(0, 100),
     gclid: clean(body.gclid),
+    utm_source: clean(body.utm_source).slice(0, 40),
+    utm_medium: clean(body.utm_medium).slice(0, 40),
+    ref: clean(body.ref).slice(0, 80),
     utm_campaign: clean(body.utm_campaign),
     utm_term: clean(body.utm_term)
   };
@@ -168,7 +171,23 @@ module.exports = async function handler(req, res) {
     return res.status(200).json({ ok: true, duplicate: true });
   }
 
+  const SOURCES = { instagram: "Instagram", ig: "Instagram", facebook: "Facebook", fb: "Facebook", google: "Google", gbp: "Google Business Profile", tiktok: "TikTok", linkedin: "LinkedIn", yelp: "Yelp" };
+  const fromRef = (h) => {
+    if (!h) return "";
+    if (/instagram/.test(h)) return "Instagram";
+    if (/facebook|fb\.com/.test(h)) return "Facebook";
+    if (/google\./.test(h)) return "Google search";
+    if (/bing\./.test(h)) return "Bing";
+    return h;
+  };
+  const cameFrom = d.gclid
+    ? "Google Ads"
+    : d.utm_source
+      ? (SOURCES[d.utm_source.toLowerCase()] || d.utm_source)
+      : fromRef(d.ref) || "Direct / unknown";
+
   const rows = [
+    ["Came from", cameFrom],
     ["Name", d.name],
     ["Phone", d.phone],
     ["Suburb", d.suburb],
@@ -194,7 +213,7 @@ module.exports = async function handler(req, res) {
       body: JSON.stringify({
         from: process.env.LEAD_FROM_EMAIL || "Joseph Driving School <onboarding@resend.dev>",
         to: to.split(",").map((s) => s.trim()).filter(Boolean),
-        subject: "New lesson enquiry: " + d.name + (d.suburb ? " (" + d.suburb + ")" : ""),
+        subject: "New lesson enquiry: " + d.name + (d.suburb ? " (" + d.suburb + ")" : "") + " · via " + cameFrom,
         text,
         html
       })

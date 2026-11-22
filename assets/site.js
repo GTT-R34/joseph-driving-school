@@ -36,6 +36,13 @@
     var v = params.get(k);
     if (v) ssSet("jds_" + k, v);
   });
+  // Remember the site that sent the visitor (first page only).
+  try {
+    if (!ssGet("jds_ref") && document.referrer) {
+      var refHost = new URL(document.referrer).hostname.replace(/^www\./, "");
+      if (refHost && refHost !== window.location.hostname.replace(/^www\./, "")) ssSet("jds_ref", refHost);
+    }
+  } catch (e) {}
 
   /* ---------- Contact links ---------- */
   var phone = cfg.phoneE164 || "+61412489478";
@@ -178,6 +185,9 @@
       gclid: ssGet("jds_gclid") || "",
       gbraid: ssGet("jds_gbraid") || "",
       wbraid: ssGet("jds_wbraid") || "",
+      utm_source: ssGet("jds_utm_source") || "",
+      utm_medium: ssGet("jds_utm_medium") || "",
+      ref: ssGet("jds_ref") || "",
       utm_campaign: ssGet("jds_utm_campaign") || "",
       utm_term: ssGet("jds_utm_term") || ""
     };
